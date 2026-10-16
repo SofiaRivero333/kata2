@@ -1,4 +1,4 @@
 package software.ulpgc.katas.model;
 
-public class Book {
+public record Book(String name, Genre genre) {
 }

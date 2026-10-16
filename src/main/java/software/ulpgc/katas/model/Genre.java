@@ -1,4 +1,5 @@
 package software.ulpgc.katas.model;
 
-public class Genre {
+public enum Genre {
+    Fantasy, Novel, ScienceFiction, Science, Unknown
 }
