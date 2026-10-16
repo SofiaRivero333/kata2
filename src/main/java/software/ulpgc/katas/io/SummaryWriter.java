@@ -1,6 +1,6 @@
 package software.ulpgc.katas.io;
 
-import software.ulpgc.katas.model.Rating;
+import software.ulpgc.katas.model.Genre;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -10,19 +10,19 @@ import java.util.Map;
 public class SummaryWriter {
 
     public void write(
-            Map<Rating, Long> summary,
+            Map<Genre, Long> summary,
             OutputStream output
     ) throws IOException {
 
         StringBuilder text = new StringBuilder();
 
         if (summary.isEmpty()) {
-            text.append("Sin peliculas.\n");
+            text.append("Sin libros.\n");
         } else {
-            text.append("Peliculas por clasificacion:\n");
+            text.append("Libros por genero:\n");
 
-            summary.forEach((rating, count) ->
-                    text.append(rating)
+            summary.forEach((genre, count) ->
+                    text.append(genre)
                             .append(": ")
                             .append(count)
                             .append('\n')
