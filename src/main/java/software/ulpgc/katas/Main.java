@@ -1,15 +1,21 @@
 package software.ulpgc.katas;
 
-import java.io.FileInputStream;
+import software.ulpgc.katas.io.UrlMovieReader;
+import software.ulpgc.katas.model.Movie;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
+import java.net.URL;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        try (InputStream is = new FileInputStream("movies.tsv")) {
-            String text = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-            System.out.print(text);
+        URL url = new URL(
+                "https://raw.githubusercontent.com/ibm-watson-data-lab/open-data/master/movies/movies.tsv"
+
+        );
+        List<Movie> movies = new UrlMovieReader(url).load();
+        for (Movie movie : movies) {
+            System.out.println(movie);
         }
     }
 }
