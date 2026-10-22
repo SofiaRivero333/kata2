@@ -1,4 +1,4 @@
 package software.ulpgc.katas.model;
 
-public class Game {
+public record Game(String name, Platform platform) {
 }

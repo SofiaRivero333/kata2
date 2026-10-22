@@ -1,4 +1,5 @@
 package software.ulpgc.katas.model;
 
-public class Platform {
+public enum Platform {
+    PC, PlayStation, Switch, Xbox, Unknown
 }
